@@ -7,6 +7,10 @@
     <groupId>ma.gov.pfe</groupId>
     <artifactId>PFE</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Config-server</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
