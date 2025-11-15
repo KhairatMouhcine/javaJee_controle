@@ -42,4 +42,11 @@ public class UserController {
     public List<UserDto> selectUsers() {
         return userService.selectUsers();
     }
+    @GetMapping("/{id}")
+    public UserDto getUserById(@PathVariable("id") Long id) {
+        return userService.selectUsers().stream()
+                .filter(u -> u.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
 }

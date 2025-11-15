@@ -39,4 +39,10 @@ public class UserServiceImpl implements IUserService {
                 .map(userMapper::toDto)
                 .collect(Collectors.toList());
     }
+    @Override
+    public UserDto getUserById(Long id) {
+        return userMapper.toDto(
+                userRepository.findById(id).orElse(null)
+        );
+    }
 }

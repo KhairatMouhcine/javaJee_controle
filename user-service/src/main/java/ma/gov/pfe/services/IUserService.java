@@ -8,4 +8,5 @@ public interface IUserService {
     UserDto updateUser(UserDto userDto);
     void deleteUser(Long id);
     List<UserDto> selectUsers();
+    UserDto getUserById(Long id);
 }
