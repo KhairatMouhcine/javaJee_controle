@@ -2,6 +2,7 @@ package ma.gov.pfe.controllers;
 
 import ma.gov.pfe.dtos.UserDto;
 import ma.gov.pfe.services.IUserService;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +11,16 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
     private final IUserService userService;
+    private final Environment environment;
 
-    public UserController(IUserService userService) {
+    public UserController(IUserService userService, Environment environment) {
         this.userService = userService;
+        this.environment = environment;
+    }
+
+    @GetMapping("/port")
+    public String getUser() {
+        return "request served by instance " + environment.getProperty("server.port");
     }
 
     @PostMapping

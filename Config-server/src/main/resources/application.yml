@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://bitbucket.org/dydossy/config-server/src/main/
+          uri: https://github.com/KhairatMouhcine/config-server-repo.git
           default-label: main
           clone-on-start: true
 logging:
